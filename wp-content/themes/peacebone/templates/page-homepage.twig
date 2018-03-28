@@ -109,17 +109,17 @@
         title: post.contact_title,
         color: "white"
       }%}
-      <div class="section__content is-centered">{{ post.contact_body }}</div>
+      <div class="section__content is-centered padded-bot--lg">{{ post.contact_body }}</div>
       <div class="section__content is-centered">
         <div class="flex-grid flex-grid--2col">
           {% for item in post.get_field('contact_items') %}
-          <div class="flex-column">
+          <div class="flex-column padded-bot--md">
             <h3>{{ item.person_title }}</h3>
             <div>{{ item.person_body }}</div>
           </div>
           {% endfor %}
         </div>
-      </div>
+      </div> 
     </div>
   </div>
 

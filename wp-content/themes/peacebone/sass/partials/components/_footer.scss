@@ -1,0 +1,35 @@
+$bp-footer: 600px;
+
+.footer {
+  background-color: $black;
+  color: #fff;
+  padding: $spacing-lg 0;
+  text-align: center;
+  font-size: $font-size-xs;
+  font-weight: 100;
+
+  @include breakpoint(600px) {
+    text-align: left;
+  }
+
+  h5 {
+    line-height: 1;
+    font-size: $font-size-sm;
+  }
+
+  .flex-column {
+    flex-basis: 100%;
+    max-width: 100%;
+
+    @include breakpoint(600px) {
+      flex-basis: auto;
+      max-width: auto;
+    }
+  }
+}
+
+.footer__top {
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  border-bottom: solid 2px $yellow;
+}

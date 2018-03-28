@@ -4,6 +4,10 @@
   justify-content: center;
   margin-left: -1em;
   margin-right: -1em;
+
+  &.space-between {
+    justify-content: space-between;
+  }
 }
 
 .flex-grid--2col {

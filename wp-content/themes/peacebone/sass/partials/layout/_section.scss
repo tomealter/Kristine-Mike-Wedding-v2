@@ -1,43 +1,44 @@
 .section {
 
-  // Padded top and bottom section
-  &.padded {
-    padding: $spacing 0;
-  }
+}
 
-  &.padded--md {
-    padding: $spacing-md 0;
-  }
+// Padded top and bottom section
+&.padded {
+  padding: $spacing 0;
+}
 
-  &.padded--lg {
-    padding: $spacing-lg 0;
-  }
+&.padded--md {
+  padding: $spacing-md 0;
+}
 
-  // Only padded on top
-  &.padded-top {
-    padding-top: $spacing;
-  }
+&.padded--lg {
+  padding: $spacing-lg 0;
+}
 
-  &.padded-top--md {
-    padding-top: $spacing-md;
-  }
+// Only padded on top
+&.padded-top {
+  padding-top: $spacing;
+}
 
-  &.padded-top--lg {
-    padding-top: $spacing-lg;
-  }
+&.padded-top--md {
+  padding-top: $spacing-md;
+}
 
-  // Only padded on bottom
-  &.padded-bot {
-    padding-bottom: $spacing;
-  }
+&.padded-top--lg {
+  padding-top: $spacing-lg;
+}
 
-  &.padded-bot--md {
-    padding-bottom: $spacing-md;
-  }
+// Only padded on bottom
+&.padded-bot {
+  padding-bottom: $spacing;
+}
 
-  &.padded-bot--lg {
-    padding-bottom: $spacing-lg;
-  }
+&.padded-bot--md {
+  padding-bottom: $spacing-md;
+}
+
+&.padded-bot--lg {
+  padding-bottom: $spacing-lg;
 }
 
 .section--green {
