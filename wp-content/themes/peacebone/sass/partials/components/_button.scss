@@ -1,0 +1,29 @@
+.button {
+  border: solid 1px transparent;
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  padding: 1em 3em;
+  transition: all 250ms ease-in-out;
+  text-decoration: none;
+}
+
+.button--white {
+  color: #ffffff;
+  border-color: #fff;
+
+  &:hover {
+    background-color: #fff;
+    color: $green;
+  }
+}
+
+.button--green {
+  color: $green;
+  border: solid 1px $green;
+
+  &:hover {
+    background-color: $green;
+    color: #ffffff;
+  }
+}

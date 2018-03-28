@@ -1,0 +1,53 @@
+.loop__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: $spacing-md;
+}
+
+.loop__link {
+  color: #ffffff;
+  font-size: $font-size-md;
+  font-weight: 700;
+  margin: 0 .75rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 250ms ease-in-out;
+
+  &:hover {
+    color: $yellow;
+  }
+
+  &.is-active {
+    border-bottom: solid 1px #fff;
+    display: block;
+    color: $yellow;
+  }
+}
+
+.loop__text {
+  color: #ffffff;
+  //display: none;
+  font-weight: 300;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 350ms ease-in-out;
+
+  &.is-active {
+    //display: block;
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.loop__bottom {
+  position: relative;
+  height: 400px;
+}
+
+.loop__body {
+  margin-bottom: 2rem;
+}

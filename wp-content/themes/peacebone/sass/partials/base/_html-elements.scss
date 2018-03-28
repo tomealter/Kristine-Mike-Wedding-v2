@@ -1,0 +1,64 @@
+html {
+  font-family: $base-font;
+  line-height: 1.6;
+  font-size: $base-font-size;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+img {
+  box-sizing: border-box;
+}
+
+// HEADINGS
+h1 {
+  font-family: $header-font;
+  font-weight: 700;
+  font-size: $font-size-xl;
+  margin: 0 0 .5em 0;
+
+  @include breakpoint(700px) {
+    font-size: $font-size-xxl;
+  }
+}
+
+h2 {
+  font-family: $header-font;
+  font-weight: 700;
+  font-size: $font-size-lg;
+  margin: 0 0 .5em 0;
+
+  @include breakpoint(700px) {
+    font-size: $font-size-xl;
+  }
+}
+
+h3 {
+  font-weight: 700;
+  font-size: $font-size-md;
+  margin: 0 0 1em 0;
+
+  @include breakpoint(700px) {
+    font-size: $font-size-lg;
+  }
+}
+
+h4 {
+  font-size: $font-size-md;
+}
+
+h5 {
+
+}
+
+

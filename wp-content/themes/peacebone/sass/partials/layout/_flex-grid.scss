@@ -1,0 +1,23 @@
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+.flex-grid--2col {
+  .flex-column {
+    @include breakpoint(600px) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+.flex-column {
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}

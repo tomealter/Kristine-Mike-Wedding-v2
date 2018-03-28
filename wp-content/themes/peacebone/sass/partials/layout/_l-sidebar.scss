@@ -1,0 +1,30 @@
+$bp-sidebar: 800px;
+
+.l-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint($bp-sidebar) {
+    justify-content: space-between;
+  }
+}
+
+.l-sidebar__sidebar {
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @include breakpoint($bp-sidebar) {
+    flex-basis: 350px;
+    max-width: 350px;
+  }
+}
+
+.l-sidebar__main {
+  flex-basis: 100%;
+  max-width: 100%;
+
+  @include breakpoint($bp-sidebar) {
+    flex-basis: calc(100% - 350px - 2em);
+    max-width: calc(100% - 350px - 2em);
+  }
+}

@@ -1,0 +1,126 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  {# Hero #}
+  {% include "partial/hero.twig" with {
+    title: post.hero_title,
+    subtitle: post.hero_subtitle,
+    date: post.hero_date,
+    image: TimberImage(post.get_field('hero_image')).src,
+    button_url: "#rsvp",
+    button_text: "RSVP"
+  }%}
+
+  {# Our Story #}
+  <div id="story" class="section padded--lg story">
+    <div class="l-constrain">
+      {% include "partial/section-title.twig" with {
+        title: post.story_title,
+        color: "green"
+      }%}
+      <div class="l-sidebar">
+        <div class="l-sidebar__sidebar">
+          {% for image in post.get_field('story_images') %}
+            <img class="story__image" src="{{ TimberImage(image.story_image).src }}" />
+          {% endfor %}
+        </div>
+        <div class="l-sidebar__main">
+          {{ post.get_field('story_body') }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {# Ceremony #}
+  <div class="section section--green padded--lg">
+    <div class="l-constrain l-constrain--narrow">
+      {% include "partial/section-title.twig" with {
+        title: post.ceremony_title,
+        color: "yellow"
+      }%}
+      {% include "partial/loop.twig" with {
+        items: post.get_field('ceremony_items')
+      }%}
+    </div>
+  </div>
+
+
+  {# Travel #}
+
+  <div class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.travel_image).src }});">
+    <div class="l-constrain l-constrain--narrow">
+      {% include "partial/section-title.twig" with {
+        title: post.travel_title,
+        color: "white"
+      }%}
+      <div class="section padded-bot--lg">
+        <div class="section__content is-centered">
+          {{ post.get_field('travel_body') }}
+        </div>
+      </div>
+      
+      {% include "partial/section-title.twig" with {
+        title: post.where_to_stay_title,
+        color: "white"
+      }%}
+      {% include "partial/loop.twig" with {
+        items: post.get_field('where_to_stay')
+      }%}
+    </div>
+  </div>
+
+
+  {# RSVP #}
+  <div class="section padded--lg">
+    <div class="l-constrain l-constrain--narrow">
+      {% include "partial/section-title.twig" with {
+        title: post.rsvp_title,
+        color: "green"
+      }%}
+      <div>{{ post.rsvp_form|shortcodes }}</div>
+    </div>
+  </div>
+
+  
+
+  {# Gifts #}
+  <div class="section padded--lg section--green">
+    <div class="l-constrain l-constrain--narrow">
+      {% include "partial/section-title.twig" with {
+        title: post.gifts_title,
+        color: "yellow"
+      }%}
+      <div class="section__content is-centered text-white">
+        <div class="section padded-bot--md">
+          {{ post.get_field('gifts_body') }}
+        </div>
+        <a href="{{ post.gifts_button.url }}" class="button button--white">{{ post.gifts_button.title }}</a>
+      </div>
+    </div>
+  </div>
+
+  
+
+  {# Contact Us #}
+  <div class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.contact_image).src }});">
+    <div class="l-constrain l-constrain--narrow">
+      {% include "partial/section-title.twig" with {
+        title: post.contact_title,
+        color: "white"
+      }%}
+      <div class="section__content is-centered">{{ post.contact_body }}</div>
+      <div class="section__content is-centered">
+        <div class="flex-grid flex-grid--2col">
+          {% for item in post.get_field('contact_items') %}
+          <div class="flex-column">
+            <h3>{{ item.person_title }}</h3>
+            <div>{{ item.person_body }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
