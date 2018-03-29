@@ -43,6 +43,9 @@
 
 .section--green {
   background-color: $green;
+  a {
+    color: #ffffff;
+  }
 }
 
 .section--bg-image {
@@ -53,13 +56,30 @@
   z-index: 1;
 
   @include pseudoblock(after, block) {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: -1;
+  }
+
+  &#travel {
+    &:after {
+      background-color: #333;
+
+      @include breakpoint(800px) {
+        background-color: rgba(0,0,0,0.7);
+      }
+    }
+  }
+
+  a {
+    color: #ffffff;
+    &:hover {
+      color: $yellow;
+    }
   }
 }
 

@@ -38,4 +38,55 @@ jQuery(document).ready(function ($) {
     parent.find('#' + loopId + '.loop__text').addClass('is-active');
   });
 
+  //Smooth scroll to anchor
+  $(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+  });
+
+  //Back to top Button
+  var backToTop = $('.back-to-top');
+  $(window).on('scroll', function() {
+    var scrollPosition = $(this).scrollTop();
+    if (scrollPosition >= 500) {
+      backToTop.addClass('is-active');
+    }
+    if (scrollPosition < 500) {
+      backToTop.removeClass('is-active');
+    }
+  });
+
+  backToTop.on('click', function() {
+    $("html, body").animate({ scrollTop: 0 }, 300);
+  });
+
+
+  // Main menu
+  var menuButton = $('.menu-button');
+  var mainMenu = $('.main-menu');
+
+  menuButton.on('click', function() {
+    if(mainMenu.hasClass('is-active')) {
+      $(this).removeClass('is-active');
+      mainMenu.removeClass('is-active');  
+      $('body').removeClass('no-scroll');
+    }
+    else {
+      $(this).addClass('is-active');
+      mainMenu.addClass('is-active'); 
+      $('body').addClass('no-scroll');
+    }
+    
+  });
+
+  $('.menu__link').on('click', function() {
+    mainMenu.removeClass('is-active');
+    menuButton.removeClass('is-active');
+    $('body').removeClass('no-scroll');
+  });
+
+
 });

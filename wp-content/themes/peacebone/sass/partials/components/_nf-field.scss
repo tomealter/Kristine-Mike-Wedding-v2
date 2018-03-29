@@ -18,6 +18,7 @@
   }
 
   input[type=button] {
+    background-color: transparent;
     border: solid 1px $green;
     color: $green;
     cursor: pointer;
@@ -52,3 +53,8 @@
   display: none;
 }
 
+.nf-response-msg {
+  text-align: center;
+  margin-bottom: 4em;
+  font-size: 24px;
+}

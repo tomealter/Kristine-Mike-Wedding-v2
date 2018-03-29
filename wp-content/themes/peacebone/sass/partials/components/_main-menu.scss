@@ -1,0 +1,70 @@
+.main-menu {
+  background-color: rgba(0,0,0,0.9);
+  display: block;
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 300ms ease-in-out;
+  width: 100%;
+  z-index: 9;
+  pointer-events: none;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+.menu {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 0;
+}
+
+.menu__item {
+  display: block;
+}
+
+.menu__link {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  position: relative;
+  transition: all 250ms ease-in-out;
+  margin-bottom: 0.3em;
+
+  &:hover {
+    color: $yellow;
+  }
+
+  @include breakpoint(600px) {
+    font-size: $font-size-lg;
+  }
+}
+
+.menu-button {
+  @include svg-background(hamburger);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  height: 38px;
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  width: 50px;
+  z-index: 10;
+
+  &.is-active {
+    @include svg-background(close);
+    height: 38px;
+    width: 50px;
+  }
+}

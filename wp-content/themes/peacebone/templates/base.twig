@@ -7,8 +7,8 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
-			
+		<header class="header">
+			{% include "header.twig" %}
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
@@ -18,11 +18,12 @@
 		</section>
 
 		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
+			{% include 'footer.twig' %}
 			{{ function('wp_footer') }}
 		{% endblock %}
+
+		{# Back To Button #}
+		<div class="back-to-top"></div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</body>

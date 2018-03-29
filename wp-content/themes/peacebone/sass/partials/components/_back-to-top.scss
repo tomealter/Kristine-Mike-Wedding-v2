@@ -1,0 +1,25 @@
+.back-to-top {
+  @include svg-background(back-to-top);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 5px;
+  bottom: 1.5em;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  opacity: .5;
+  position: fixed;
+  right: -4.5em;
+  width: 40px;
+  z-index: 5;
+  transition: all 250ms ease-in-out;
+
+  &.is-active {
+    right: 1.5em;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+}

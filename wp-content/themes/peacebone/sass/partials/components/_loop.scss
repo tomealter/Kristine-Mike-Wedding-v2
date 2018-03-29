@@ -1,8 +1,14 @@
+$bp-loop: 800px;
+
 .loop__top {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: $spacing-md;
+
+  @include breakpoint($bp-loop) {
+    display: flex;
+  }
 }
 
 .loop__link {
@@ -27,17 +33,21 @@
 
 .loop__text {
   color: #ffffff;
-  //display: none;
   font-weight: 300;
-  position: absolute;
-  text-align: center;
+  margin-bottom: 3em;
+  position: relative;
+  text-align: left;
   top: 0;
-  opacity: 0;
-  pointer-events: none;
   transition: opacity 350ms ease-in-out;
 
+  @include breakpoint($bp-loop) {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   &.is-active {
-    //display: block;
     opacity: 1;
     pointer-events: initial;
   }
@@ -45,9 +55,23 @@
 
 .loop__bottom {
   position: relative;
-  height: 400px;
+  height: auto;
+
+  @include breakpoint($bp-loop) {
+    height: 400px;
+  }
 }
 
 .loop__body {
   margin-bottom: 2rem;
+}
+
+.loop__title {
+  display: block;
+  border-bottom: solid 1px #fff;
+  margin-bottom: 1em;
+
+  @include breakpoint($bp-loop) {
+    display: none;
+  }
 }

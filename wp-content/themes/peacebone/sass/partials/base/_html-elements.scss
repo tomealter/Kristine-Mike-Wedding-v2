@@ -6,10 +6,19 @@ html {
 
 body {
   margin: 0;
+
+  &.no-scroll {
+    overflow-y: hidden;
+  }
 }
 
 a {
+  color: $green;
+  transition: all 250ms ease-in-out;
 
+  &:hover {
+    color: $yellow;
+  }
 }
 
 p {

@@ -6,6 +6,7 @@
   padding: 1em 3em;
   transition: all 250ms ease-in-out;
   text-decoration: none;
+  margin-bottom: 1em;
 }
 
 .button--white {
@@ -14,7 +15,7 @@
 
   &:hover {
     background-color: #fff;
-    color: $green;
+    color: $green !important;
   }
 }
 
@@ -24,6 +25,6 @@
 
   &:hover {
     background-color: $green;
-    color: #ffffff;
+    color: #ffffff !important; 
   }
 }

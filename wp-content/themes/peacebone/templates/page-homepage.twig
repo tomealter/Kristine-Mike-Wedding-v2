@@ -2,14 +2,17 @@
 
 {% block content %}
   {# Hero #}
-  {% include "partial/hero.twig" with {
-    title: post.hero_title,
-    subtitle: post.hero_subtitle,
-    date: post.hero_date,
-    image: TimberImage(post.get_field('hero_image')).src,
-    button_url: "#rsvp",
-    button_text: "RSVP"
-  }%}
+  <div id="hero">
+    {% include "partial/hero.twig" with {
+      title: post.hero_title,
+      subtitle: post.hero_subtitle,
+      date: post.hero_date,
+      image: TimberImage(post.get_field('hero_image')).src,
+      button_url: "#rsvp",
+      button_text: "RSVP"
+    }%}
+  </div>
+  
 
   {# Our Story #}
   <div id="story" class="section padded--lg story">
@@ -33,7 +36,7 @@
 
 
   {# Ceremony #}
-  <div class="section section--green padded--lg">
+  <div id="ceremony" class="section section--green padded--lg">
     <div class="l-constrain l-constrain--narrow">
       {% include "partial/section-title.twig" with {
         title: post.ceremony_title,
@@ -47,8 +50,7 @@
 
 
   {# Travel #}
-
-  <div class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.travel_image).src }});">
+  <div id="travel" class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.travel_image).src }});">
     <div class="l-constrain l-constrain--narrow">
       {% include "partial/section-title.twig" with {
         title: post.travel_title,
@@ -72,7 +74,7 @@
 
 
   {# RSVP #}
-  <div class="section padded--lg">
+  <div id="rsvp" class="section padded--lg">
     <div class="l-constrain l-constrain--narrow">
       {% include "partial/section-title.twig" with {
         title: post.rsvp_title,
@@ -85,7 +87,7 @@
   
 
   {# Gifts #}
-  <div class="section padded--lg section--green">
+  <div id="gifts" class="section padded--lg section--green">
     <div class="l-constrain l-constrain--narrow">
       {% include "partial/section-title.twig" with {
         title: post.gifts_title,
@@ -103,7 +105,7 @@
   
 
   {# Contact Us #}
-  <div class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.contact_image).src }});">
+  <div id="contact" class="section section--bg-image padded--lg" style="background-image: url({{ TimberImage(post.contact_image).src }});">
     <div class="l-constrain l-constrain--narrow">
       {% include "partial/section-title.twig" with {
         title: post.contact_title,

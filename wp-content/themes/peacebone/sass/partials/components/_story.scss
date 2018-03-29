@@ -2,4 +2,12 @@
   max-width: 100%;
   border: solid 8px $yellow;
   margin-bottom: 1rem;
+
+  &:nth-child(n+2) {
+    display: none;
+
+    @include breakpoint($bp-sidebar) {
+      display: block;
+    }
+  }
 }
