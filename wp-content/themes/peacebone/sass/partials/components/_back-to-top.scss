@@ -1,5 +1,5 @@
 .back-to-top {
-  @include svg-background(back-to-top);
+  @include svg-background(back-to-top--yellow);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -20,6 +20,6 @@
   }
 
   &:hover {
-    opacity: .9;
+    opacity: 1;
   }
 }
