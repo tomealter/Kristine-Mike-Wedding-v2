@@ -45,6 +45,10 @@
   background-color: $green;
   a {
     color: #ffffff;
+
+    &:hover {
+      color: $yellow;
+    }
   }
 }
 
